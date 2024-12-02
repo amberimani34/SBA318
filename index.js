@@ -1,12 +1,20 @@
 // console.log('it is running');
 const express = require('express');
 const app = express();
+const jsxViewEngine = require('jsx-view-engine');
 const PORT = 3001
 
 // data
-const bedrooms = require('./data/bedrooms');
-const kitchens = require('./data/kitchens');
-const livingrooms = require('./data/livingrooms');
+const rooms = require('./data/rooms');
+const clients = require('./data/clients');
+const projects = require('./data/projects');
+
+
+app.set('view engine', 'jsx');
+app.set('views', './views');
+app.engine('jsx', jsxViewEngine());
+
+app.use(express.static('public'))
 
 // Middleware =============
 app.use((req, res, next) => {
@@ -30,18 +38,21 @@ app.get('/about', (req, res) => {
 
 
 
-app.get('/api/bedrooms', (req, res) => {
-    res.json(bedrooms);
+app.get('/api/rooms', (req, res) => {
+    res.json(rooms);
 })
 
-app.get('/api/kitchens', (req, res) => {
-    res.json(kitchens);
+app.get('/api/clients', (req, res) => {
+    res.json(clients);
 })
 
-app.get('/api/livingrooms', (req, res) => {
-    res.json(livingrooms);
+app.get('/views/newClient', (req, res) => {
+    res.render('NewClient');
 })
 
+app.get('/api/projects', (req, res) => {
+    res.json(projects);
+})
 
 
 
