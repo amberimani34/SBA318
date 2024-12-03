@@ -129,6 +129,10 @@ app.get('/views/newClient', (req, res) => {
     res.render('NewClient'); // Render a view for creating a new client
 });
 
+app.get('/views/home', (req, res) => {
+    res.render('Homepage'); // Render a view for creating a new client
+});
+
 
 
 
