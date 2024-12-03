@@ -9,6 +9,7 @@ class New extends React.Component {
                 Number of Projects: <input type="text" name='numberOfProjects' /> <br />
                 Current Projects: <input type="checkbox" name='currentProjects' /> <br />
                 <input type="submit" name='' value='Add New Client'/>
+                <input type="submit" action='/' />
             </form>
         )
     }
