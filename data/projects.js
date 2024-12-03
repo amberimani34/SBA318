@@ -6,7 +6,7 @@ const projects = [
         onBudget: true
     },
     {
-        name: 'Jessica Smith',
+        name: 'Jessica Simmons',
         room: 'Kitchen',
         budget: '$500',
         onBudget: false

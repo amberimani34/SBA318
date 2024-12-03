@@ -125,7 +125,7 @@ app.delete('/api/projects/:id', (req, res) => {
 });
 
 // Render New Client Page
-app.get('/views/newClient', (req, res) => {
+app.get('/views/client', (req, res) => {
     res.render('NewClient'); // Render a view for creating a new client
 });
 
